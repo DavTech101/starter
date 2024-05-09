@@ -1,0 +1,164 @@
+//##########################################################################################
+// SCHEMA CONFIG
+//##########################################################################################
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "cockroachdb"
+  url      = env("DATABASE_URL")
+}
+
+//##########################################################################################
+// ENUM SCHEMAS
+//##########################################################################################
+
+//##########################################################################################
+// STORE SCHEMA
+//##########################################################################################
+model Store {
+  id         String       @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name       String
+  userId     String
+  tags       Tag[]        @relation("StoreTag")
+  pages      Page[]       @relation("StorePage")
+  blog       Blog[]       @relation("StoreBlog")
+  Review     Review[]     @relation("StoreReview")
+  sections   Section[]    @relation("StoreSection")
+  Newsletter Newsletter[] @relation("StoreNewsletter")
+  updatedAt  DateTime     @updatedAt @map("updated_at")
+  createdAt  DateTime     @default(now()) @map("created_at")
+}
+
+//##########################################################################################
+// BLOG
+//##########################################################################################
+model Blog {
+  id              String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  title           String
+  slug            String    @unique
+  intro           String
+  content         String
+  author          String
+  readTime        Int       @map("read_time")
+  images          Image[]   @relation("BlogImage")
+  metaTitle       String?   @map("meta_title")
+  metaKeywords    String?   @map("meta_keywords")
+  metaDescription String?   @map("meta_description")
+  isArchived      Boolean   @default(false) @map("is_archived")
+  isFeatured      Boolean   @default(false) @map("is_featured")
+  tags            BlogTag[] @relation("BlogTag")
+  store           Store     @relation("StoreBlog", fields: [storeId], references: [id])
+  storeId         String    @db.Uuid
+  updatedAt       DateTime  @updatedAt @map("updated_at")
+  createdAt       DateTime  @default(now()) @map("created_at")
+}
+
+//##########################################################################################
+// PAGES RELATED SCHEMAS
+//##########################################################################################
+model Page {
+  id             String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name           String?
+  metaTitle      String?   @map("meta_title")
+  metaKeywords   String?   @map("meta_keywords")
+  metaDesciption String?   @map("meta_description")
+  sections       Section[] @relation("PageSection")
+  store          Store     @relation("StorePage", fields: [storeId], references: [id])
+  storeId        String    @db.Uuid
+  updatedAt      DateTime  @updatedAt @map("updated_at")
+  createdAt      DateTime  @default(now()) @map("created_at")
+}
+
+model Section {
+  id          String  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  title       String?
+  subtitle    String?
+  description String?
+  pageId      String? @db.Uuid
+  page        Page?   @relation("PageSection", fields: [pageId], references: [id])
+
+  images    Image[]       @relation("SectionImage")
+  bullets   Bulletpoint[] @relation("SectionBullet")
+  store     Store         @relation("StoreSection", fields: [storeId], references: [id])
+  storeId   String        @db.Uuid
+  updatedAt DateTime      @updatedAt @map("updated_at")
+  createdAt DateTime      @default(now()) @map("created_at")
+}
+
+model Review {
+  id          String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  author      String?
+  title       String?
+  content     String?
+  rating      Float    @default(0)
+  show        Boolean  @default(false)
+  imgURL      String?  @map("img_url")
+  productName String?  @map("product_name")
+  storeId     String   @db.Uuid
+  store       Store?   @relation("StoreReview", fields: [storeId], references: [id])
+  updatedAt   DateTime @updatedAt @map("updated_at")
+  createdAt   DateTime @default(now()) @map("created_at")
+}
+
+//##########################################################################################
+// NEWSLETTER SCHEMA
+//##########################################################################################
+model Newsletter {
+  id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  email     String   @unique
+  store     Store    @relation("StoreNewsletter", fields: [storeId], references: [id])
+  storeId   String   @db.Uuid
+  updatedAt DateTime @updatedAt @map("updated_at")
+  createdAt DateTime @default(now()) @map("created_at")
+}
+
+//##########################################################################################
+// UTILITY SCHEMAS
+//##########################################################################################
+model Tag {
+  id        String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name      String
+  store     Store     @relation("StoreTag", fields: [storeId], references: [id])
+  storeId   String    @db.Uuid
+  updatedAt DateTime  @updatedAt @map("updated_at")
+  createdAt DateTime  @default(now()) @map("created_at")
+  BlogTag   BlogTag[] @relation("BlogTag")
+}
+
+model Bulletpoint {
+  id         String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  content    String
+  sectionId  String   @db.Uuid
+  bulletType String?  @map("bullet_type")
+  section    Section  @relation("SectionBullet", fields: [sectionId], references: [id])
+  updatedAt  DateTime @updatedAt @map("updated_at")
+  createdAt  DateTime @default(now()) @map("created_at")
+}
+
+model Image {
+  id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  url       String
+  blogId    String?  @db.Uuid
+  sectionId String?  @db.Uuid
+  altText   String?  @map("alt_text")
+  section   Section? @relation("SectionImage", fields: [sectionId], references: [id], onDelete: Cascade)
+  updatedAt DateTime @updatedAt @map("updated_at")
+  createdAt DateTime @default(now()) @map("created_at")
+  Blog      Blog?    @relation("BlogImage", fields: [blogId], references: [id], onDelete: Cascade)
+}
+
+//##########################################################################################
+// PIVOT SCHEMAS
+//##########################################################################################
+model BlogTag {
+  tagId     String   @db.Uuid
+  blogId    String   @db.Uuid
+  tag       Tag      @relation("BlogTag", fields: [tagId], references: [id], onDelete: Cascade)
+  blog      Blog     @relation("BlogTag", fields: [blogId], references: [id], onDelete: Cascade)
+  updatedAt DateTime @updatedAt @map("updated_at")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@id([blogId, tagId])
+}
