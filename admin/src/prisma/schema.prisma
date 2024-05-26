@@ -32,6 +32,21 @@ model Store {
 }
 
 //##########################################################################################
+// BANNER SCHEMA
+//##########################################################################################
+model Banner {
+  id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name      String
+  imageUrl  String
+  storeId   String   @db.Uuid
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([storeId])
+  @@index([name], name: "banner_name_idx")
+}
+
+//##########################################################################################
 // BLOG
 //##########################################################################################
 model Blog {

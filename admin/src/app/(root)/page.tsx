@@ -4,13 +4,14 @@ import { useEffect } from 'react';
 import useStoreModal from '@hooks/useStoreModal';
 
 //##########################################################################################
-// SETUP PAGE COMPONENT TYPES
+// SETUP PAGE PROPS
 //##########################################################################################
+type SetupPageProps = {};
 
 //##########################################################################################
 // SETUP PAGE COMPONENT
 //##########################################################################################
-const SetupPage = () => {
+const SetupPage: React.FC<SetupPageProps> = () => {
   const { isOpen, onOpen } = useStoreModal();
 
   useEffect(() => {

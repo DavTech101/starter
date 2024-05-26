@@ -1,6 +1,15 @@
 import prisma from '@utils/prisma';
+import type { Metadata } from 'next';
 import { redirect } from 'next/navigation';
 import { auth } from '@clerk/nextjs/server';
+
+//##########################################################################################
+// METADATA
+//##########################################################################################
+export const metadata: Metadata = {
+  title: 'Admin Dashboard',
+  description: 'Admin Dashboard',
+};
 
 //##########################################################################################
 // SETUP LAYOUT

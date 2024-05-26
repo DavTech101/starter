@@ -42,6 +42,7 @@ export default function NavMenu({
   } = {
     Dashboard: `/${storeId}`,
     Tags: `/${storeId}/tags`,
+    Banners: `/${storeId}/banners`,
     Blogs: `/${storeId}/blogs`,
     Reviews: `/${storeId}/reviews`,
     Settings: `/${storeId}/settings`,
