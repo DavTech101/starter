@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { BsInstagram, BsFacebook, BsTiktok, BsYoutube } from 'react-icons/bs';
 
 //##########################################################################################
-// COMPONENT TYPES
+// SOCIALS TYPES
 //##########################################################################################
 type SocialsProps = {};
 
@@ -26,7 +26,7 @@ const socials = [
 ];
 
 //##########################################################################################
-// COMPONENT
+// SOCIALS COMPONENT
 //##########################################################################################
 const Socials: React.FC<SocialsProps> = () => {
   return (

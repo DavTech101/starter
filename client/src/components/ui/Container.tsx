@@ -1,7 +1,7 @@
 import cn from '@utils/styleMerger';
 
 //##########################################################################################
-// COMPONENT TYPES
+// CONTAINER TYPES
 //##########################################################################################
 type ContainerProps = {
   className?: string;
@@ -9,7 +9,7 @@ type ContainerProps = {
 };
 
 //##########################################################################################
-// COMPONENT
+// CONTAINER COMPONENT
 //##########################################################################################
 const Container: React.FC<ContainerProps> = ({ children, className }) => {
   return (
