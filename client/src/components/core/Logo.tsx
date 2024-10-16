@@ -2,6 +2,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Suspense } from 'react';
 import cn from '@utils/styleMerger';
+import { HOME_ROUTE } from '@data/routes';
+import { COMPANY_LOGO } from '@data/constants';
 import LineSkeleton from '@components/skeletons/LineSkeleton';
 
 //##########################################################################################
@@ -16,19 +18,19 @@ type LogoProps = {
 //##########################################################################################
 const Logo: React.FC<LogoProps> = ({ className = '' }) => {
   return (
-    <Link href='/'>
+    <Link href={HOME_ROUTE}>
       <div
         className={cn(
-          `w-44 h-7 sm:w-[21rem] sm:h-14`,
-          `relative overflow-hidden my-auto`,
+          'size-20',
+          'relative my-auto overflow-hidden',
           className
         )}
       >
-        <Suspense fallback={<LineSkeleton h='h-14' />}>
+        <Suspense fallback={<LineSkeleton h='h-20' />}>
           <Image
             fill
-            alt={''}
-            src={''}
+            alt={'Logo'}
+            src={COMPANY_LOGO}
             className='object-cover object-center'
           />
         </Suspense>

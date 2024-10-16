@@ -22,19 +22,29 @@
       "@fonts/*": ["./src/fonts/*"],
       "@hooks/*": ["./src/hooks/*"],
       "@utils/*": ["./src/utils/*"],
-      "@Types/*": ["./src/types/*"],
-      "@types": ["./src/types/index"],
+      "@stores/*": ["./src/stores/*"],
       "@config/*": ["./src/config/*"],
       "@styles/*": ["./src/styles/*"],
+      "@types": ["./src/types/index"],
       "@server/*": ["./src/server/*"],
+      "@filters/*": ["./src/filters/*"],
       "@schemas/*": ["./src/schemas/*"],
       "@context/*": ["./src/context/*"],
+      "@features/*": ["./src/features/*"],
       "@providers/*": ["./src/providers/*"],
       "@components/*": ["./src/components/*"],
       "@footer/*": ["./src/components/footer/*"],
-      "@coreStyles": ["./src/styles/coreStyles"]
+      "@coreStyles": ["./src/styles/coreStyles"],
+      "@Types/*": ["./src/types/*"],
+      "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "src/types/next-auth.d.ts"
+  ],
   "exclude": ["node_modules"]
 }

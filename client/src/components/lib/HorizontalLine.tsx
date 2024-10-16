@@ -1,22 +1,19 @@
 import cn from '@utils/styleMerger';
 
 //##########################################################################################
-// CONTAINER TYPES
+// HORIZONTAL LINE TYPES
 //##########################################################################################
-type ContainerProps = {
+type HorizontalLineProps = {
   className?: string;
-  children: React.ReactNode;
 };
 
 //##########################################################################################
-// CONTAINER COMPONENT
+// HORIZONTAL LINE COMPONENT
 //##########################################################################################
-const Container: React.FC<ContainerProps> = ({ children, className }) => {
+const HorizontalLine: React.FC<HorizontalLineProps> = ({ className }) => {
   return (
-    <div className={cn('mx-auto max-w-7xl px-6 lg:px-8', className)}>
-      {children}
-    </div>
+    <hr className={cn('border-[1.5px] border-t border-stone-800', className)} />
   );
 };
 
-export default Container;
+export default HorizontalLine;

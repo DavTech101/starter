@@ -7,6 +7,7 @@ export const CLIENT_BASE_URL: string =
 //##########################################################################################
 // COMPANY ROUTES
 //##########################################################################################
+export const HOME_ROUTE: string = '/';
 export const ABOUT_ROUTE: string = '/about-us';
 export const CONTACT_ROUTE: string = '/contact';
 export const DEFAULT_IMAGE: string = '/circle.png';
