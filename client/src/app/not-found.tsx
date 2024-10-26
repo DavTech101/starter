@@ -1,5 +1,5 @@
 import { SubTitle } from '@styles/coreStyles';
-import Container from '@components/ui/Container';
+import Container from '@components/lib/Container';
 
 //##########################################################################################
 // COMPONENT TYPES
