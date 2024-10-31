@@ -1,12 +1,13 @@
 import cn from '@utils/styleMerger';
+import { COMPANY_NAME } from '@data/constants';
 
 //##########################################################################################
-// COPYRIGHT TYPES
+// COPY RIGHT TYPES
 //##########################################################################################
 type CopyrightProps = {};
 
 //##########################################################################################
-// COPYRIGHT COMPONENT
+// COPY RIGHT COMPONENT
 //##########################################################################################
 const Copyright: React.FC<CopyrightProps> = () => {
   return (
@@ -18,8 +19,8 @@ const Copyright: React.FC<CopyrightProps> = () => {
         'bottom-2'
       )}
     >
-      &copy; 2023-{new Date().getFullYear()} ASubToGo, developed by DavTech. All
-      rights reserved.
+      &copy; 2023-{new Date().getFullYear()} {COMPANY_NAME}, developed by
+      DavTech. All rights reserved.
     </span>
   );
 };

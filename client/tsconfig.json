@@ -33,7 +33,7 @@
       "@features/*": ["./src/features/*"],
       "@providers/*": ["./src/providers/*"],
       "@components/*": ["./src/components/*"],
-      "@footer/*": ["./src/components/footer/*"],
+      "@footer/*": ["src/components/core/footer/*"],
       "@coreStyles": ["./src/styles/coreStyles"],
       "@Types/*": ["./src/types/*"],
       "@/*": ["./src/*"]

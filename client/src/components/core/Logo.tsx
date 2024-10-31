@@ -20,17 +20,13 @@ const Logo: React.FC<LogoProps> = ({ className = '' }) => {
   return (
     <Link href={HOME_ROUTE}>
       <div
-        className={cn(
-          'size-20',
-          'relative my-auto overflow-hidden',
-          className
-        )}
+        className={cn('size-20', 'relative my-auto overflow-hidden', className)}
       >
         <Suspense fallback={<LineSkeleton h='h-20' />}>
           <Image
             fill
-            alt={'Logo'}
-            src={COMPANY_LOGO}
+            alt={COMPANY_LOGO.alt}
+            src={COMPANY_LOGO.link}
             className='object-cover object-center'
           />
         </Suspense>
