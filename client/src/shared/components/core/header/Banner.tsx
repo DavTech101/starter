@@ -1,19 +1,15 @@
-import cn from '@utils/styleMerger';
+import cn from '@/shared/utils/styleMerger';
 
 //##########################################################################################
-// HORIZONTAL LINE TYPES
+// BANNER TYPES
 //##########################################################################################
-type HorizontalLineProps = {
-  className?: string;
+type BannerProps = {};
+
+//##########################################################################################
+// BANNER COMPONENT
+//##########################################################################################
+const Banner: React.FC<BannerProps> = () => {
+  return <div>Banner</div>;
 };
 
-//##########################################################################################
-// HORIZONTAL LINE COMPONENT
-//##########################################################################################
-const HorizontalLine: React.FC<HorizontalLineProps> = ({ className }) => {
-  return (
-    <hr className={cn('border-[1.5px] border-t border-stone-800', className)} />
-  );
-};
-
-export default HorizontalLine;
+export default Banner;

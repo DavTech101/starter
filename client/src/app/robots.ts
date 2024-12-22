@@ -1,5 +1,5 @@
-import { CLIENT_BASE_URL } from '@data/routes';
 import type { MetadataRoute } from 'next';
+import { CLIENT_BASE_URL, HOME_ROUTE, SITEMAP_ROUTE } from '@data/routes';
 
 //##########################################################################################
 // ROBOTS TXT GENERATOR
@@ -20,10 +20,10 @@ const robots = (): MetadataRoute.Robots => {
 
   return {
     host: CLIENT_BASE_URL,
-    sitemap: `${CLIENT_BASE_URL}/sitemap.xml'`,
+    sitemap: `${CLIENT_BASE_URL}${SITEMAP_ROUTE}`,
     rules: {
       disallow,
-      allow: ['/'],
+      allow: [HOME_ROUTE],
       userAgent: '*',
     },
   };

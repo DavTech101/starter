@@ -18,24 +18,19 @@
       }
     ],
     "paths": {
-      "@data/*": ["./src/data/*"],
-      "@fonts/*": ["./src/fonts/*"],
-      "@hooks/*": ["./src/hooks/*"],
-      "@utils/*": ["./src/utils/*"],
-      "@stores/*": ["./src/stores/*"],
-      "@config/*": ["./src/config/*"],
-      "@styles/*": ["./src/styles/*"],
-      "@types": ["./src/types/index"],
       "@server/*": ["./src/server/*"],
-      "@filters/*": ["./src/filters/*"],
-      "@schemas/*": ["./src/schemas/*"],
-      "@context/*": ["./src/context/*"],
+      "@shared/*": ["./src/shared/*"],
+      "@data/*": ["./src/shared/data/*"],
       "@features/*": ["./src/features/*"],
-      "@providers/*": ["./src/providers/*"],
-      "@components/*": ["./src/components/*"],
-      "@coreStyles": ["./src/styles/coreStyles"],
-      "@footer/*": ["./src/components/core/footer/*"],
-      "@Types/*": ["./src/types/*"],
+      "@hooks/*": ["./src/shared/hooks/*"],
+      "@utils/*": ["./src/shared/utils/*"],
+      "@styles/*": ["./src/shared/styles/*"],
+      "@types": ["./src/shared/types/index"],
+      "@providers/*": ["./src/shared/providers/*"],
+      "@components/*": ["./src/shared/components/*"],
+      "@coreStyles": ["./src/shared/styles/coreStyles"],
+      "@footer/*": ["./src/shared/components/core/footer/*"],
+      "@Types/*": ["./src/shared/types/*"],
       "@/*": ["./src/*"]
     }
   },
@@ -44,7 +39,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/types/next-auth.d.ts"
+    "src/shared/types/next-auth.d.ts"
   ],
   "exclude": ["node_modules"]
 }

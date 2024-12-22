@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Suspense } from 'react';
-import cn from '@utils/styleMerger';
+import cn from '@/shared/utils/styleMerger';
 import LineSkeleton from '@components/skeletons/LineSkeleton';
 
 //##########################################################################################

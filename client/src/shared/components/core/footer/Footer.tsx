@@ -1,4 +1,4 @@
-import cn from '@utils/styleMerger';
+import cn from '@/shared/utils/styleMerger';
 import Logo from '@components/core/Logo';
 import Container from '@components/lib/Container';
 import Copyright from '@components/core/Copyright';

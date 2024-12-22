@@ -1,5 +1,5 @@
-import cn from '@utils/styleMerger';
-import { COMPANY_NAME } from '@data/constants';
+import cn from '@/shared/utils/styleMerger';
+import { COMPANY_NAME } from '@data/companyData';
 
 //##########################################################################################
 // COPY RIGHT TYPES

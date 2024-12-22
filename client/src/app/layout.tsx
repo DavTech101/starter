@@ -1,11 +1,17 @@
 import '@styles/globals.css';
 import cn from '@utils/styleMerger';
 import type { Metadata } from 'next';
-import Providers from '@providers/Providers';
 import { Montserrat } from 'next/font/google';
 import { CLIENT_BASE_URL } from '@data/routes';
+import Providers from '@shared/providers/Providers';
 import Navbar from '@components/core/navbar/Navbar';
 import Footer from '@components/core/footer/Footer';
+
+import {
+  COMPANY_NAME,
+  COMPANY_DESCRIPTION,
+  GOOGLE_VERIFICATION_ID,
+} from '@data/companyData';
 
 //##########################################################################################
 // META DATA
@@ -16,14 +22,13 @@ const font = Montserrat({
 
 export const metadata: Metadata = {
   title: {
-    default: 'New app',
-    template: `%s | New App`,
+    default: COMPANY_NAME,
+    template: `%s | ${COMPANY_NAME}`,
   },
-  description: `
-    Example description`,
+  description: COMPANY_DESCRIPTION,
   metadataBase: new URL(CLIENT_BASE_URL),
   verification: {
-    google: '',
+    google: GOOGLE_VERIFICATION_ID,
   },
 };
 

@@ -1,6 +1,6 @@
 'use client';
 
-import cn from '@utils/styleMerger';
+import cn from '@/shared/utils/styleMerger';
 import { useEffect, useState } from 'react';
 
 //##########################################################################################

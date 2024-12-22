@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import cn from '@utils/styleMerger';
+import cn from '@/shared/utils/styleMerger';
 import { motion } from 'framer-motion';
 import { PropsWithChildren } from 'react';
 import { GoArrowRight, GoArrowLeft } from 'react-icons/go';

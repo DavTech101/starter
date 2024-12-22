@@ -1,7 +1,7 @@
 'use client';
 
 import { X } from 'lucide-react';
-import cn from '@utils/styleMerger';
+import cn from '@/shared/utils/styleMerger';
 import { useCallback, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 

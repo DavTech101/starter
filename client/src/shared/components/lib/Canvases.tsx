@@ -1,4 +1,4 @@
-import cn from '@utils/styleMerger';
+import cn from '@/shared/utils/styleMerger';
 import { PropsWithChildren } from 'react';
 
 //##########################################################################################

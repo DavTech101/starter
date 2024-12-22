@@ -1,13 +1,13 @@
-import { SubTitle } from '@styles/coreStyles';
+import { SubTitle } from '@/shared/styles/coreStyles';
 import Container from '@components/lib/Container';
 
 //##########################################################################################
-// COMPONENT TYPES
+// NOT FOUND TYPES
 //##########################################################################################
 type NotFoundProps = {};
 
 //##########################################################################################
-// COMPONENT
+// NOT FOUND COMPONENT
 //##########################################################################################
 const NotFound: React.FC<NotFoundProps> = () => {
   return (
