@@ -19,7 +19,6 @@
     ],
     "paths": {
       "@server/*": ["./src/server/*"],
-      "@shared/*": ["./src/shared/*"],
       "@data/*": ["./src/shared/data/*"],
       "@features/*": ["./src/features/*"],
       "@hooks/*": ["./src/shared/hooks/*"],
@@ -31,6 +30,7 @@
       "@coreStyles": ["./src/shared/styles/coreStyles"],
       "@footer/*": ["./src/shared/components/core/footer/*"],
       "@Types/*": ["./src/shared/types/*"],
+      "@shared/*": ["./src/shared/*"],
       "@/*": ["./src/*"]
     }
   },
