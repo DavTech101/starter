@@ -3,7 +3,7 @@
 import { X } from 'lucide-react';
 import cn from '@/shared/utils/styleMerger';
 import { useCallback, useEffect } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'motion/react';
 
 //##########################################################################################
 // CUSTOM MODAL TYPES

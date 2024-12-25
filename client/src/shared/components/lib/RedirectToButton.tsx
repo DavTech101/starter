@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import cn from '@/shared/utils/styleMerger';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { PropsWithChildren } from 'react';
 import { GoArrowRight, GoArrowLeft } from 'react-icons/go';
 

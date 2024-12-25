@@ -9,6 +9,7 @@ import Footer from '@components/core/footer/Footer';
 
 import {
   COMPANY_NAME,
+  COMPANY_LOGO_ALT,
   COMPANY_DESCRIPTION,
   GOOGLE_VERIFICATION_ID,
 } from '@data/companyData';
@@ -30,6 +31,23 @@ export const metadata: Metadata = {
   verification: {
     google: GOOGLE_VERIFICATION_ID,
   },
+  icons: {
+    icon: '/favicon.ico',
+  },
+
+  openGraph: {
+    title: `${COMPANY_NAME}`,
+    description: COMPANY_DESCRIPTION,
+    images: [
+      {
+        width: 1260,
+        height: 800,
+        alt: COMPANY_LOGO_ALT,
+        url: `/images/acc-sym.png`,
+      },
+    ],
+    siteName: COMPANY_NAME,
+  },
 };
 
 //##########################################################################################
@@ -45,7 +63,7 @@ export default function RootLayout({
       <Providers>
         <body
           className={cn(
-            `relative text-cs-blue`,
+            `relative`,
             `grid min-h-screen grid-cols-[100%] grid-rows-[auto_1fr_auto]`,
             `lg:text-lg`,
             font.className
