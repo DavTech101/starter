@@ -1,0 +1,22 @@
+{
+  "rsc": true,
+  "tsx": true,
+  "registries": {},
+  "style": "new-york",
+  "iconLibrary": "lucide",
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "tailwind": {
+    "config": "",
+    "prefix": "",
+    "baseColor": "gray",
+    "cssVariables": true,
+    "css": "src/shared/styles/globals.css"
+  },
+  "aliases": {
+    "lib": "@shared/utils",
+    "hooks": "@shared/hooks",
+    "ui": "@shared/components/ui",
+    "components": "@shared/components",
+    "utils": "@shared/utils/styleMerger"
+  }
+}
