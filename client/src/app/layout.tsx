@@ -4,8 +4,8 @@ import type { Metadata } from 'next';
 import { Montserrat } from 'next/font/google';
 import { CLIENT_BASE_URL } from '@data/routes';
 import Providers from '@shared/providers/Providers';
-import Navbar from '@components/core/navbar/Navbar';
-import Footer from '@components/core/footer/Footer';
+import Navbar from '@components/core/Navbar';
+import Footer from '@components/core/Footer';
 
 import {
   COMPANY_NAME,

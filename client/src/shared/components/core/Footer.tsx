@@ -1,5 +1,5 @@
-import cn from '@/shared/utils/styleMerger';
 import Logo from '@components/core/Logo';
+import cn from '@/shared/utils/styleMerger';
 import Container from '@components/lib/Container';
 import Copyright from '@components/core/Copyright';
 

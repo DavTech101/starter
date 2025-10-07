@@ -1,5 +1,5 @@
-import cn from '@/shared/utils/styleMerger';
 import { PropsWithChildren } from 'react';
+import cn from '@/shared/utils/styleMerger';
 
 //##########################################################################################
 // CANVASES TYPES
